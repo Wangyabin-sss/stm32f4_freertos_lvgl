@@ -1,5 +1,5 @@
-## 2017.8.13
-* Ìí¼ÓÍ¼Æ¬
+## 2021.8.13
+* æ·»åŠ å›¾ç‰‡
 ```c
 LV_IMG_DECLARE(watch_bg);
 LV_IMG_DECLARE(hour);
@@ -7,19 +7,19 @@ LV_IMG_DECLARE(minute);
 LV_IMG_DECLARE(second);
 ```
 ## 2021.8.14
-* ½«gui.c¸ÄÎªutf-8±àÂë£¬ÖĞÎÄÏÔÊ¾Õı³£
-* Ìí¼ÓÖĞÎÄ×ÖÌå£¨font_chinese.c£©
-[×ÖÌå¹¤¾ß](https://lvgl.io/tools/fontconverter)
+* å°†gui.cæ”¹ä¸ºutf-8ç¼–ç ï¼Œä¸­æ–‡æ˜¾ç¤ºæ­£å¸¸
+* æ·»åŠ ä¸­æ–‡å­—ä½“ï¼ˆfont_chinese.cï¼‰
+[å­—ä½“å·¥å…·](https://lvgl.io/tools/fontconverter)
 ```c
-//ÒÑÌí¼ÓÎÄ×ÖÈçÏÂ  [22ÏñËØ 4bpp]
-ÉèÖÃÖĞ¹úÊÇ·ñ¿ªÆô
+//å·²æ·»åŠ æ–‡å­—å¦‚ä¸‹  [22åƒç´  4bpp]
+è®¾ç½®ä¸­å›½æ˜¯å¦å¼€å¯
 ```
 ## 2021.8.16
-* tabviewÖĞ²»ÄÜÓÃlv_btnmatrix_create(tab2, NULL);
+* tabviewä¸­ä¸èƒ½ç”¨lv_btnmatrix_create(tab2, NULL);
 ## 2021.8.19
-* ´¥ÃşÆÁ»á·Éµã
-* ÈÕÀúÏÔÊ¾±È½Ï¿¨,¿ÉÒÔÉèÖÃ¶¯»­Ê±³¤
-* ÓĞÊ±ºò»á¿¨ÔÚ
+* è§¦æ‘¸å±ä¼šé£ç‚¹
+* æ—¥å†æ˜¾ç¤ºæ¯”è¾ƒå¡,å¯ä»¥è®¾ç½®åŠ¨ç”»æ—¶é•¿
+* æœ‰æ—¶å€™ä¼šå¡åœ¨
 ```c
 uint8_t NRF24L01_TxPacket(uint8_t *txbuf)
 {
@@ -28,7 +28,7 @@ uint8_t NRF24L01_TxPacket(uint8_t *txbuf)
 	NRF24L01_CE=0;
 	NRF24L01_Write_Buf(WR_TX_PLOAD,txbuf,TX_PLOAD_WIDTH);
  	NRF24L01_CE=1;	   
-	while(NRF24L01_IRQ!=0);               ¿¨ÔÚÕâ
+	while(NRF24L01_IRQ!=0);               å¡åœ¨è¿™
 	//delay_ms(10);
 	sta=NRF24L01_Read_Reg(STATUS);  
 	NRF24L01_Write_Reg(NRF_WRITE_REG+STATUS,sta); 
@@ -37,13 +37,13 @@ uint8_t NRF24L01_TxPacket(uint8_t *txbuf)
 		NRF24L01_Write_Reg(FLUSH_TX,0xff);
 		return MAX_TX; 
 	}
-	if(sta&TX_OK)//·¢ËÍÍê³É
+	if(sta&TX_OK)//å‘é€å®Œæˆ
 	{
 		return TX_OK;
 	}
-	return 0xff;//ÆäËûÔ­Òò·¢ËÍÊ§°Ü
+	return 0xff;//å…¶ä»–åŸå› å‘é€å¤±è´¥
 }
 ```
-* esp8266 wifiÁ¬½ÓÎ´ÓÅ»¯
-* RFID¿¨Ìí¼ÓÉ¾³ıÎ´Ğ´
-* À¶ÑÀÎ´Ğ´
+* esp8266 wifiè¿æ¥æœªä¼˜åŒ–
+* RFIDå¡æ·»åŠ åˆ é™¤æœªå†™
+* è“ç‰™æœªå†™
